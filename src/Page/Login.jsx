@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
     const navigate = useNavigate();
     const [name, setname] = useState('');
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState();
 
     const handlenameChange = (e) => {
         setname(e.target.value);
@@ -22,9 +22,9 @@ function Login() {
         e.preventDefault();
 
         try {
-            // const response = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/admin.json');
-            const userData = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/admin.json');
-            // const userData = await response.json();
+            const response = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/admin.json');
+            // const userData = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/admin.json');
+            const userData = await response.json();
 
             const user = userData.find((user) => user.name === name && user.password === password);
 

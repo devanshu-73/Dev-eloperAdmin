@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
@@ -41,16 +42,19 @@ function Header() {
                                 <NavLink to="/"><i className="fa fa-sign-in " />Login Page</NavLink>
                             </li>
                             <li>
-                                <Link to="#"><i className="fa fa-desktop "></i>Add<span className="fa arrow"></span></Link>
-                                <ul className="nav nav-second-level">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#addDropdown">
+                                    <i className="fa fa-desktop"></i>Add<span className="fa arrow"></span>
+                                </a>
+                                <ul className="nav nav-second-level collapse" id="addDropdown">
                                     <li>
-                                        <NavLink to="/addProduct"><i className="fa fa-edit "></i>Add Product</NavLink>
+                                        <NavLink to="/addProduct"><i className="fa fa-edit"></i>Add Product</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/addBlog"><i className="fa fa-edit "></i>Add Blog</NavLink>
+                                        <NavLink to="/addBlog"><i className="fa fa-edit"></i>Add Blog</NavLink>
                                     </li>
                                 </ul>
                             </li>
+
                             <li>
                                 <Link to="#"><i className="fa fa-desktop "></i>Manage<span className="fa arrow"></span></Link>
                                 <ul className="nav nav-second-level">
