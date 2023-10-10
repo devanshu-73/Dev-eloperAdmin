@@ -11,12 +11,12 @@ function ManageUser() {
     }, []);
     // Axios.........
     const fetch = async () => {
-        const res = await axios.get('http://localhost:3000/contact');
+        const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/contact.json');
         setUsers(res.data);
     }
     const onDelete = async (id) => {
-        console.log(1);
-        const res = await axios.delete(`http://localhost:3000/contact/${id}`);
+        // console.log(1);
+        const res = await axios.delete(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/contact.json/${id}`);
         if (res.status == "200") {
             alert('success...');
             fetch();

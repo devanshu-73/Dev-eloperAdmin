@@ -19,9 +19,9 @@ function AddProduct() {
 
         data.roomType = room;
         data.price = price;
-        const res = await axios.post(`http://localhost:3000/product`, data);
-        console.log(data);
+        const res = await axios.post(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/product.json`, data);
         alert("Inserted successfully");
+        // console.log(data);
     };
 
 

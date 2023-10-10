@@ -14,11 +14,11 @@ function ManageUser() {
   }, []);
   // Axios.........
   const fetch = async (e) => {
-    const res = await axios.get('http://localhost:3000/user');
+    const res = await axios.get('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json');
     setUsers(res.data);
   }
   const onDelete = async (id) => {
-    const res = await axios.delete(`http://localhost:3000/user/${id}`);
+    const res = await axios.delete(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`);
     if (res.status == "200") {
       alert('success...');
       fetch();
@@ -27,15 +27,15 @@ function ManageUser() {
   };
 
   const statusChange = async (id) => {
-    const res = await axios.get(`http://localhost:3000/user/${id}`);
+    const res = await axios.get(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`);
     if (res.data.status) {
-      const res1 = await axios.patch(`http://localhost:3000/user/${id}`, { status: false });
+      const res1 = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`, { status: false });
       if (res1.status == 200) {
         fetch();
         alert('status Block successFul');
       }
     } else {
-      const res1 = await axios.patch(`http://localhost:3000/user/${id}`, { status: true });
+      const res1 = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`, { status: true });
       if (res1.status == 200) {
         fetch();
         alert('status Unblock successFul');

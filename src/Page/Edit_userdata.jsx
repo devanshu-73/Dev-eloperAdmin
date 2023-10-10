@@ -21,7 +21,7 @@ const Edit_userdata = () => {
 
     const fetch = async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/user/${id}`);
+            const res = await axios.get(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`);
             setData(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -56,7 +56,7 @@ const Edit_userdata = () => {
     const onsubmit = async (e) => {
         e.preventDefault();
         if (validation()) {
-            const res = await axios.patch(`http://localhost:3000/user/${id}`, data);
+            const res = await axios.patch(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`, data);
             if (res.status === 200) {
                 setData({ ...data, username: "", email: "", phone: "", password: "" });
                 alert('Update success');

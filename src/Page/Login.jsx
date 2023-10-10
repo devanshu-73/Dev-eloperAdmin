@@ -22,8 +22,9 @@ function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/admin');
-            const userData = await response.json();
+            // const response = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/admin.json');
+            const userData = await fetch('https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/admin.json');
+            // const userData = await response.json();
 
             const user = userData.find((user) => user.name === name && user.password === password);
 

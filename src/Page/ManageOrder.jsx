@@ -11,11 +11,11 @@ function ManageUser() {
   }, []);
   const fetch = async () => {
     // Axios.........
-    const res = await axios.get(`http://localhost:3000/order`);
+    const res = await axios.get(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/order.json`);
     setUsers(res.data);
   }
   const onDelete = async (id) => {
-    const res = await axios.delete(`http://localhost:3000/order/${id}`);
+    const res = await axios.delete(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/order.json/${id}`);
     if (res.status == "200") {
       alert('success...');
       fetch();
