@@ -21,7 +21,7 @@ const Edit_userdata = () => {
 
     const fetch = async () => {
         try {
-            const res = await axios.get(`https://devsite-hotel-default-rtdb.asia-southeast1.firebasedatabase.app/user.json/${id}`);
+            const res = await axios.get(`https;//localhost;3000/users/${id}`);
             setData(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);
